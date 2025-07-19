@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  flask-app:
+    build: ./Flask App
+    ports:
+      - "5000:5000"
+    container_name: flask-container
+
+  linear-regression-docker:
+    build: ./linear-regression-docker
+    container_name: linear-regression-container
+
+  menu-based-python-project:
+    build: ./menu-based-python-project
+    container_name: menu-project-container
+
+  task4-dind:
+    build: ./task4-dind
+    privileged: true
+    ports:
+      - "2375:2375"
+    container_name: dind-container
+
+  task5-firefox:
+    build: ./task5-firefox
+    ports:
+      - "5900:5900"
+    container_name: firefox-container
+
+  task6-vlc:
+    build: ./task6.vlc
+    ports:
+      - "5901:5901"
+    container_name: vlc-container
+
+  task7-apache:
+    build: ./task7.apache
+    ports:
+      - "8080:80"
+    container_name: apache-container
